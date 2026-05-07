@@ -7,6 +7,8 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = document.querySelector('.lightbox img');
 const lightboxClose = document.querySelector('.lightbox-close');
+const galleryGrid = document.querySelector('[data-gallery-grid]');
+const galleryToggle = document.querySelector('[data-gallery-toggle]');
 const year = document.querySelector('#year');
 
 if (year) {
@@ -26,6 +28,25 @@ navLinks.forEach((link) => {
     navToggle?.setAttribute('aria-expanded', 'false');
   });
 });
+
+if (galleryGrid && galleryToggle) {
+  galleryToggle.addEventListener('click', () => {
+    const isCollapsed = galleryGrid.classList.toggle('is-collapsed');
+    const isExpanded = !isCollapsed;
+
+    galleryToggle.setAttribute('aria-expanded', String(isExpanded));
+    const label = galleryToggle.querySelector('span:last-child');
+    const icon = galleryToggle.querySelector('span:first-child');
+
+    if (label) {
+      label.textContent = isExpanded ? 'Meno foto' : 'Altre foto';
+    }
+
+    if (icon) {
+      icon.textContent = isExpanded ? '−' : '+';
+    }
+  });
+}
 
 let activeSlide = 0;
 let sliderTimer;
