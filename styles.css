@@ -1,16 +1,16 @@
 :root {
-  --sage: #74885b;
-  --olive: #3f4b33;
-  --deep: #151a12;
-  --cream: #f6f0e6;
-  --sand: #e7d8c2;
-  --terracotta: #bd7654;
+  --sage: #65b783;
+  --olive: #5fb0a0;
+  --deep: #2d2a28;
+  --cream: #f8f1e6;
+  --sand: #efd9c3;
+  --terracotta: #e79cad;
   --gold: #d8ac6c;
   --white: #fffaf3;
-  --ink: #22251d;
-  --muted: #74786f;
-  --line: rgba(34, 37, 29, 0.12);
-  --shadow: 0 24px 70px rgba(31, 34, 24, 0.18);
+  --ink: #292623;
+  --muted: #807672;
+  --line: rgba(41, 38, 35, 0.12);
+  --shadow: 0 24px 70px rgba(45, 42, 40, 0.16);
   --radius-xl: 34px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -29,8 +29,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(216, 172, 108, 0.26), transparent 28rem),
-    radial-gradient(circle at 90% 10%, rgba(116, 136, 91, 0.22), transparent 30rem),
+    radial-gradient(circle at top left, rgba(231, 156, 173, 0.28), transparent 28rem),
+    radial-gradient(circle at 90% 10%, rgba(95, 176, 160, 0.22), transparent 30rem),
+    radial-gradient(circle at 50% 100%, rgba(216, 172, 108, 0.16), transparent 34rem),
     var(--cream);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -61,6 +62,13 @@ button {
 }
 
 .page-shell {
+  overflow: hidden;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
@@ -96,17 +104,25 @@ button {
 }
 
 .brand-mark {
-  width: 42px;
+  width: 72px;
   height: 42px;
+  padding: 6px 7px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--olive), var(--sage));
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  font-weight: 800;
-  box-shadow: 0 12px 24px rgba(63, 75, 51, 0.28);
+  overflow: hidden;
+  border: 1px solid rgba(95, 176, 160, 0.18);
+  border-radius: 999px;
+  color: rgba(34, 37, 29, 0.72);
+  background:
+    radial-gradient(circle at 18% 15%, rgba(216, 172, 108, 0.16), transparent 46%),
+    rgba(246, 240, 230, 0.74);
+  box-shadow: 0 10px 22px rgba(95, 176, 160, 0.14);
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  transform: translateY(2px);
 }
 
 .brand strong,
@@ -143,7 +159,7 @@ button {
 
 .nav-links a:hover {
   color: var(--deep);
-  background: rgba(116, 136, 91, 0.12);
+  background: rgba(95, 176, 160, 0.14);
   transform: translateY(-1px);
 }
 
@@ -201,6 +217,51 @@ body.menu-open .nav-toggle span:last-child {
 .hero-copy {
   position: relative;
   z-index: 2;
+}
+
+.hero-logo {
+  width: min(520px, 100%);
+  margin-bottom: 26px;
+  padding: 18px 22px 16px;
+  border: 1px solid rgba(34, 37, 29, 0.08);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(216, 172, 108, 0.16), transparent 36%),
+    radial-gradient(circle at 82% 18%, rgba(95, 176, 160, 0.16), transparent 32%),
+    rgba(246, 240, 230, 0.56);
+  box-shadow: 0 18px 48px rgba(45, 42, 40, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+.hero-skyline {
+  width: 100%;
+  height: auto;
+  margin-bottom: -10px;
+  color: rgba(34, 37, 29, 0.68);
+}
+
+.hero-logo-text {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+  color: var(--deep);
+}
+
+.hero-logo-text span {
+  font-family: "Great Vibes", "Playfair Display", Georgia, serif;
+  font-size: clamp(56px, 7.8vw, 92px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.hero-logo-text strong {
+  color: rgba(34, 37, 29, 0.72);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
 }
 
 .eyebrow {
@@ -289,7 +350,7 @@ h3 {
 .button-primary {
   color: var(--white);
   background: linear-gradient(135deg, var(--deep), var(--olive));
-  box-shadow: 0 18px 34px rgba(21, 26, 18, 0.22);
+  box-shadow: 0 18px 34px rgba(45, 42, 40, 0.2);
 }
 
 .button-secondary {
@@ -302,10 +363,20 @@ h3 {
   background: var(--deep);
 }
 
+.button-whatsapp {
+  color: var(--white);
+  background: #1f9d55;
+  box-shadow: 0 18px 34px rgba(31, 157, 85, 0.22);
+}
+
+.button-whatsapp:hover {
+  background: #188346;
+}
+
 .button-light {
   color: var(--deep);
   background: var(--white);
-  box-shadow: 0 18px 34px rgba(21, 26, 18, 0.16);
+  box-shadow: 0 18px 34px rgba(45, 42, 40, 0.14);
 }
 
 .trust-row {
@@ -484,10 +555,11 @@ h3 {
   border-radius: 42px;
   color: var(--white);
   background:
-    linear-gradient(135deg, rgba(21, 26, 18, 0.94), rgba(63, 75, 51, 0.88)),
-    radial-gradient(circle at 82% 18%, rgba(216, 172, 108, 0.72), transparent 24rem),
+    linear-gradient(135deg, rgba(45, 42, 40, 0.94), rgba(95, 176, 160, 0.86)),
+    radial-gradient(circle at 82% 18%, rgba(231, 156, 173, 0.62), transparent 24rem),
+    radial-gradient(circle at 18% 86%, rgba(216, 172, 108, 0.5), transparent 20rem),
     var(--deep);
-  box-shadow: 0 32px 90px rgba(21, 26, 18, 0.22);
+  box-shadow: 0 32px 90px rgba(45, 42, 40, 0.2);
 }
 
 .mood-section .eyebrow,
@@ -771,7 +843,7 @@ h3 {
   right: 14%;
   left: 14%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(63, 75, 51, 0.28), transparent);
+  background: linear-gradient(90deg, transparent, rgba(95, 176, 160, 0.32), transparent);
 }
 
 .timeline-item {
@@ -789,7 +861,7 @@ h3 {
   border: 5px solid var(--cream);
   border-radius: 50%;
   background: var(--terracotta);
-  box-shadow: 0 0 0 1px rgba(189, 118, 84, 0.32), 0 12px 28px rgba(189, 118, 84, 0.22);
+  box-shadow: 0 0 0 1px rgba(231, 156, 173, 0.34), 0 12px 28px rgba(231, 156, 173, 0.22);
 }
 
 .timeline-item span {
@@ -929,38 +1001,61 @@ h3 {
 .google-rating-card {
   max-width: 900px;
   margin: 0 auto 18px;
-  padding: 22px 28px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  border: 1px solid rgba(216, 172, 108, 0.38);
-  border-radius: 28px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent),
-    rgba(255, 250, 243, 0.78);
-  box-shadow: 0 18px 56px rgba(31, 34, 24, 0.08);
+  gap: 16px;
+  border: 1px solid rgba(60, 64, 67, 0.12);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(60, 64, 67, 0.12);
 }
 
-.google-rating-card span {
-  color: var(--deep);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.google-word {
+  display: inline-flex;
+  align-items: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.google-word b {
+  font-weight: 800;
+}
+
+.google-word b:nth-child(1),
+.google-word b:nth-child(4) {
+  color: #4285f4;
+}
+
+.google-word b:nth-child(2),
+.google-word b:nth-child(6) {
+  color: #ea4335;
+}
+
+.google-word b:nth-child(3) {
+  color: #fbbc05;
+}
+
+.google-word b:nth-child(5) {
+  color: #34a853;
 }
 
 .google-rating-card strong {
-  color: var(--terracotta);
-  font-family: "Playfair Display", serif;
-  font-size: clamp(36px, 5vw, 56px);
+  color: #202124;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
   line-height: 1;
 }
 
-.google-rating-card p {
-  margin-bottom: 0;
-  color: rgba(34, 37, 29, 0.72);
-  font-weight: 800;
+.google-stars {
+  color: #fbbc05;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 0 rgba(60, 64, 67, 0.08);
 }
 
 .score-grid div {
@@ -1024,7 +1119,7 @@ h3 {
   height: 12px;
   border: 0;
   border-radius: 999px;
-  background: rgba(63, 75, 51, 0.24);
+  background: rgba(95, 176, 160, 0.24);
   cursor: pointer;
   transition: width 0.24s ease, background 0.24s ease;
 }
@@ -1032,6 +1127,87 @@ h3 {
 .slider-controls button.active {
   width: 36px;
   background: var(--olive);
+}
+
+.postcard-section {
+  padding-top: 58px;
+}
+
+.postcard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  grid-auto-rows: 250px;
+  gap: 18px;
+}
+
+.postcard-card {
+  position: relative;
+  min-height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 243, 0.58);
+  border-radius: 30px;
+  background: rgba(255, 250, 243, 0.58);
+  box-shadow: 0 18px 56px rgba(31, 34, 24, 0.1);
+}
+
+.postcard-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+.postcard-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(21, 26, 18, 0.78));
+}
+
+.postcard-card figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 2;
+  padding: 16px;
+  border: 1px solid rgba(255, 250, 243, 0.24);
+  border-radius: 20px;
+  color: var(--white);
+  background: rgba(21, 26, 18, 0.36);
+  backdrop-filter: blur(12px);
+}
+
+.postcard-card strong,
+.postcard-card span {
+  display: block;
+}
+
+.postcard-card strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.postcard-card span {
+  margin-top: 6px;
+  color: rgba(255, 250, 243, 0.78);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.postcard-card:hover img {
+  transform: scale(1.07);
+}
+
+.postcard-large {
+  grid-row: span 2;
+}
+
+.postcard-wide {
+  grid-column: span 2;
 }
 
 .host-section {
@@ -1129,9 +1305,10 @@ h3 {
   border-radius: 38px;
   color: var(--white);
   background:
-    linear-gradient(135deg, rgba(21, 26, 18, 0.94), rgba(63, 75, 51, 0.94)),
+    linear-gradient(135deg, rgba(45, 42, 40, 0.94), rgba(95, 176, 160, 0.94)),
+    radial-gradient(circle at 88% 18%, rgba(231, 156, 173, 0.42), transparent 18rem),
     var(--deep);
-  box-shadow: 0 30px 80px rgba(21, 26, 18, 0.22);
+  box-shadow: 0 30px 80px rgba(45, 42, 40, 0.2);
 }
 
 .booking-panel .eyebrow,
@@ -1155,6 +1332,13 @@ h3 {
 
 .booking-panel p {
   opacity: 0.78;
+}
+
+.booking-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .site-footer {
@@ -1261,7 +1445,11 @@ h3 {
 
 .sticky-cta a:first-child {
   color: var(--deep);
-  background: rgba(116, 136, 91, 0.18);
+  background: rgba(95, 176, 160, 0.18);
+}
+
+.sticky-cta .whatsapp-link {
+  background: #1f9d55;
 }
 
 .reveal {
@@ -1358,8 +1546,14 @@ h3 {
 
   .services-grid,
   .gallery-grid,
+  .postcard-grid,
   .market-strip {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .postcard-large,
+  .postcard-wide {
+    grid-column: span 2;
   }
 
   .timeline::before {
@@ -1424,8 +1618,19 @@ h3 {
   .services-grid,
   .gallery-grid,
   .market-strip,
+  .postcard-grid,
   .score-grid {
     grid-template-columns: 1fr;
+  }
+
+  .postcard-grid {
+    grid-auto-rows: 280px;
+  }
+
+  .postcard-large,
+  .postcard-wide {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .google-rating-card {
@@ -1523,5 +1728,24 @@ h3 {
 
   .brand small {
     font-size: 10px;
+  }
+
+  .brand-mark {
+    width: 58px;
+    height: 38px;
+    padding: 6px;
+  }
+
+  .hero-logo {
+    padding: 14px;
+    border-radius: 24px;
+  }
+
+  .hero-logo-text {
+    gap: 8px;
+  }
+
+  .hero-logo-text strong {
+    letter-spacing: 0.24em;
   }
 }

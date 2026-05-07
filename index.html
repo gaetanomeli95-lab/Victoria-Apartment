@@ -14,15 +14,40 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="victoria-skyline" viewBox="0 0 560 180">
+        <path d="M18 128h524" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M38 124V78l16-12 18 12v46Z" fill="#e9a4b4" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M72 124V82l18-14 19 14v42Z" fill="#f1b4c5" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M54 122V96c0-10 7-18 16-18s16 8 16 18v26" fill="none" stroke="currentColor" stroke-width="4"/>
+        <path d="M136 124V70h82v54Z" fill="#e7bc58" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M154 124V96c0-14 11-25 25-25s25 11 25 25v28" fill="#f6d487" stroke="currentColor" stroke-width="4"/>
+        <path d="M218 124V54h26v70Z" fill="#d9a14f" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M222 69h18M222 84h18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M270 124V84h90v40Z" fill="#5fb0a0" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M282 94c10-12 20 12 30 0s20 12 30 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M394 124V44h88v80Z" fill="#65b783" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M400 44 438 10l38 34Z" fill="#bfe88f" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M420 124V90c0-17 9-30 20-30s20 13 20 30v34" fill="#fffaf3" stroke="currentColor" stroke-width="4"/>
+        <path d="M410 61h56M412 78c9-17 18 17 27 0s18 17 27 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M505 124V82l32-18 8 60Z" fill="#e8a6b8" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M496 82c8-18 18-4 26-20 8 17 21 2 30 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M522 124V97c0-12 8-22 18-22s18 10 18 22v27" fill="#fffaf3" stroke="currentColor" stroke-width="4"/>
+      </symbol>
+    </svg>
     <header class="site-header" id="top">
       <nav class="nav" aria-label="Navigazione principale">
         <a class="brand" href="#top" aria-label="Victoria Apartment Palermo home">
-          <span class="brand-mark">V</span>
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 560 180">
+              <use href="#victoria-skyline"></use>
+            </svg>
+          </span>
           <span>
             <strong>Victoria Apartment</strong>
             <small>Palermo</small>
@@ -47,11 +72,21 @@
     <main>
       <section class="hero" aria-label="Victoria Apartment Palermo">
         <div class="hero-copy">
+          <div class="hero-logo reveal" aria-label="Logo Victoria Apartment">
+            <svg class="hero-skyline" viewBox="0 0 560 180" aria-hidden="true">
+              <use href="#victoria-skyline"></use>
+            </svg>
+            <div class="hero-logo-text">
+              <span>Victoria</span>
+              <strong>Apartment</strong>
+            </div>
+          </div>
           <span class="eyebrow">Largo Siviglia, 24/b A · Palermo</span>
           <h1>Il tuo appartamento silenzioso nel cuore più autentico di Palermo.</h1>
           <p>Victoria Apartment accoglie fino a 4 ospiti in 61 m² curati nei dettagli, con WiFi gratuito, aria condizionata, cucina privata, balconi e parcheggio privato su richiesta.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://www.booking.com/hotel/it/victoria-apartment-palermo.it.html" target="_blank" rel="noreferrer">Prenota su Booking</a>
+            <a class="button button-whatsapp" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">Scrivi su WhatsApp</a>
             <a class="button button-secondary" href="#gallery">Guarda le foto</a>
           </div>
           <div class="trust-row" aria-label="Valutazioni principali">
@@ -185,6 +220,26 @@
             <img src="837364940.jpg" alt="Bagno moderno con lavabo, bidet e doccia">
             <span>Bagno moderno</span>
           </button>
+          <button class="gallery-item" type="button" data-full="galleria%20agg/837364936.jpg" aria-label="Apri foto camera con due letti singoli">
+            <img src="galleria%20agg/837364936.jpg" alt="Camera con due letti singoli e biancheria pronta">
+            <span>Camera doppia</span>
+          </button>
+          <button class="gallery-item" type="button" data-full="galleria%20agg/709004202.jpg" aria-label="Apri foto camera con TV e armadio aperto">
+            <img src="galleria%20agg/709004202.jpg" alt="Dettaglio camera con TV, specchio e appendiabiti">
+            <span>TV e dettagli</span>
+          </button>
+          <button class="gallery-item wide" type="button" data-full="galleria%20agg/709321667.jpg" aria-label="Apri foto cucina attrezzata">
+            <img src="galleria%20agg/709321667.jpg" alt="Cucina attrezzata con pensili in legno e piano di lavoro">
+            <span>Cucina attrezzata</span>
+          </button>
+          <button class="gallery-item" type="button" data-full="galleria%20agg/738631355.jpg" aria-label="Apri foto camera matrimoniale">
+            <img src="galleria%20agg/738631355.jpg" alt="Camera matrimoniale con parete verde e luci da lettura">
+            <span>Camera matrimoniale</span>
+          </button>
+          <button class="gallery-item" type="button" data-full="galleria%20agg/773283706.jpg" aria-label="Apri foto letto matrimoniale con asciugamani">
+            <img src="galleria%20agg/773283706.jpg" alt="Letto matrimoniale con asciugamani e quadro decorativo">
+            <span>Letto preparato</span>
+          </button>
         </div>
       </section>
 
@@ -310,9 +365,11 @@
           <h2>Recensioni eccellenti per posizione, pulizia e accoglienza.</h2>
         </div>
         <div class="google-rating-card reveal" aria-label="Valutazione Google">
-          <span>Google</span>
-          <strong>4,9 ★</strong>
-          <p>56 recensioni degli ospiti</p>
+          <span class="google-word" aria-label="Google">
+            <b>G</b><b>o</b><b>o</b><b>g</b><b>l</b><b>e</b>
+          </span>
+          <strong>4,9</strong>
+          <span class="google-stars" aria-label="5 stelle">★★★★★</span>
         </div>
         <div class="score-grid reveal">
           <div><strong>9,5</strong><span>Staff</span></div>
@@ -343,6 +400,43 @@
           <button type="button" data-slide="1" aria-label="Mostra recensione 2"></button>
           <button type="button" data-slide="2" aria-label="Mostra recensione 3"></button>
           <button type="button" data-slide="3" aria-label="Mostra recensione 4"></button>
+        </div>
+      </section>
+
+      <section class="section postcard-section" aria-label="Dettagli e dintorni di Victoria Apartment">
+        <div class="section-heading compact">
+          <span class="eyebrow">Dettagli e dintorni</span>
+          <h2>Piccole cartoline tra comfort di casa e bellezza palermitana.</h2>
+        </div>
+        <div class="postcard-grid">
+          <figure class="postcard-card postcard-large reveal">
+            <img src="717723780.jpg" alt="Cattedrale di Palermo vicino a Victoria Apartment">
+            <figcaption>
+              <strong>La Cattedrale</strong>
+              <span>A circa 500 metri dall’appartamento</span>
+            </figcaption>
+          </figure>
+          <figure class="postcard-card reveal">
+            <img src="846758701.jpg" alt="Coffee corner e colazione a Victoria Apartment">
+            <figcaption>
+              <strong>Coffee corner</strong>
+              <span>Una pausa semplice prima di uscire</span>
+            </figcaption>
+          </figure>
+          <figure class="postcard-card reveal">
+            <img src="717723782.jpg" alt="Palazzina storica a Palermo">
+            <figcaption>
+              <strong>Architettura storica</strong>
+              <span>Colori caldi e itinerari a pochi minuti</span>
+            </figcaption>
+          </figure>
+          <figure class="postcard-card postcard-wide reveal">
+            <img src="717723788.jpg" alt="Giardino storico a Palermo">
+            <figcaption>
+              <strong>Passeggiate nel verde</strong>
+              <span>Angoli tranquilli dopo una giornata in centro</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -408,7 +502,10 @@
           <h2>Pronto a vivere Palermo dal posto giusto?</h2>
           <p>Verifica disponibilità, condizioni e tariffe aggiornate direttamente su Booking.</p>
         </div>
-        <a class="button button-light" href="https://www.booking.com/hotel/it/victoria-apartment-palermo.it.html" target="_blank" rel="noreferrer">Prenota ora</a>
+        <div class="booking-actions">
+          <a class="button button-light" href="https://www.booking.com/hotel/it/victoria-apartment-palermo.it.html" target="_blank" rel="noreferrer">Prenota ora</a>
+          <a class="button button-whatsapp" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
       </section>
     </main>
 
@@ -434,6 +531,7 @@
     <div>
       <a href="https://www.google.com/maps/search/?api=1&query=Largo%20Siviglia%2024%2Fb%20A%2090138%20Palermo%20Italia" target="_blank" rel="noreferrer">Mappa</a>
       <a href="https://www.booking.com/hotel/it/victoria-apartment-palermo.it.html" target="_blank" rel="noreferrer">Prenota</a>
+      <a class="whatsapp-link" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">WhatsApp</a>
     </div>
   </aside>
 
@@ -443,6 +541,7 @@
     "@type": "LodgingBusiness",
     "name": "Victoria Apartment Palermo",
     "description": "Appartamento accogliente nel cuore di Palermo per massimo 4 ospiti, con WiFi gratuito, aria condizionata, cucina privata, balconi e parcheggio su richiesta.",
+    "telephone": "+393510044209",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Largo Siviglia, 24/b A",
