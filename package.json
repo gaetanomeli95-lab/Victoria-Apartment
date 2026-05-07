@@ -1,0 +1,18 @@
+{
+  "name": "victoria-apartment-palermo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito vetrina statico per Victoria Apartment Palermo.",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "keywords": [
+    "victoria apartment",
+    "palermo",
+    "sito vetrina",
+    "vercel"
+  ],
+  "author": "Victoria Apartment Palermo",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://victoria-apartment-palermo.vercel.app/sitemap.xml
