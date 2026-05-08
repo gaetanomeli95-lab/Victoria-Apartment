@@ -132,9 +132,22 @@ window.addEventListener('hashchange', () => {
 blendLogoImages();
 
 if (galleryGrid && galleryToggle) {
+  const extraItems = Array.from(galleryGrid.querySelectorAll('.gallery-item:nth-child(n + 5)'));
+
+  const syncGalleryItemsVisibility = (collapsed) => {
+    extraItems.forEach((item) => {
+      item.hidden = collapsed;
+      item.style.display = collapsed ? 'none' : '';
+    });
+  };
+
+  syncGalleryItemsVisibility(galleryGrid.classList.contains('is-collapsed'));
+
   galleryToggle.addEventListener('click', () => {
     const isCollapsed = galleryGrid.classList.toggle('is-collapsed');
     const isExpanded = !isCollapsed;
+
+    syncGalleryItemsVisibility(isCollapsed);
 
     galleryToggle.setAttribute('aria-expanded', String(isExpanded));
     const label = galleryToggle.querySelector('span:last-child');
