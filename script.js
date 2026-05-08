@@ -141,7 +141,9 @@ if (galleryGrid && galleryToggle) {
     });
   };
 
-  syncGalleryItemsVisibility(galleryGrid.classList.contains('is-collapsed'));
+  galleryGrid.classList.add('is-collapsed');
+  galleryToggle.setAttribute('aria-expanded', 'false');
+  syncGalleryItemsVisibility(true);
 
   galleryToggle.addEventListener('click', () => {
     const isCollapsed = galleryGrid.classList.toggle('is-collapsed');
