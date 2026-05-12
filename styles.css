@@ -32,6 +32,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(98, 101, 77, 0.34), transparent 30rem),
@@ -373,6 +374,8 @@ h3 {
 }
 
 .button {
+  max-width: 100%;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -381,6 +384,8 @@ h3 {
   border: 1px solid transparent;
   border-radius: 999px;
   font-weight: 800;
+  text-align: center;
+  overflow-wrap: anywhere;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
 }
 
@@ -674,6 +679,7 @@ h3 {
 }
 
 .direct-booking-card {
+  min-width: 0;
   padding: 36px;
 }
 
@@ -696,11 +702,15 @@ h3 {
 }
 
 .direct-contact-links a {
+  max-width: 100%;
+  min-width: 0;
   padding: 12px 14px;
   border-radius: 999px;
   color: var(--white);
   background: var(--olive);
   font-weight: 900;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .direct-contact-links a:nth-child(2) {
@@ -1792,6 +1802,7 @@ h3 {
   width: min(var(--max), calc(100% - 44px));
   margin: 0 auto 40px;
   padding: 46px;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1843,12 +1854,15 @@ h3 {
 
 .booking-contact-list span {
   width: fit-content;
+  max-width: 100%;
+  min-width: 0;
   padding: 9px 12px;
   border: 1px solid rgba(255, 250, 243, 0.18);
   border-radius: 999px;
   color: rgba(255, 250, 243, 0.92);
   background: rgba(255, 250, 243, 0.08);
   font-weight: 850;
+  overflow-wrap: anywhere;
 }
 
 .site-footer {
@@ -1980,7 +1994,16 @@ h3 {
   }
 
   .nav {
+    gap: 10px;
     border-radius: 28px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-name {
+    min-width: 0;
   }
 
   .nav-toggle {
@@ -2201,6 +2224,25 @@ h3 {
     padding: 26px;
   }
 
+  .direct-booking-card h2,
+  .location-copy h2,
+  .booking-panel h2 {
+    overflow-wrap: break-word;
+  }
+
+  .direct-contact-links,
+  .booking-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .direct-contact-links a,
+  .booking-contact-list span {
+    width: 100%;
+    white-space: normal;
+  }
+
   .market-strip div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -2219,13 +2261,33 @@ h3 {
     right: 14px;
     bottom: 14px;
     left: 14px;
+    gap: 8px;
+    padding: 8px;
     justify-content: space-between;
     border-radius: 24px;
   }
 
   .sticky-cta span {
-    max-width: 42%;
-    padding-left: 8px;
+    max-width: 92px;
+    padding-left: 4px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .sticky-cta div {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .sticky-cta a {
+    min-width: 0;
+    padding: 10px 4px;
+    font-size: 12px;
+    text-align: center;
+    overflow-wrap: normal;
   }
 
   .section {
