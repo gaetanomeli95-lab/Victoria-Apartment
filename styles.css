@@ -117,11 +117,11 @@ button {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid rgba(98, 101, 77, 0.14);
-  border-radius: 16px;
+  border: 0;
+  border-radius: 0;
   color: rgba(34, 37, 29, 0.72);
-  background: var(--white);
-  box-shadow: 0 10px 22px rgba(98, 101, 77, 0.14);
+  background: transparent;
+  box-shadow: none;
 }
 
 .brand-mark svg {
@@ -133,7 +133,7 @@ button {
 .brand-mark img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .logo-blend {
@@ -253,26 +253,26 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .hero-logo {
-  width: min(560px, 100%);
+  width: min(460px, 100%);
   margin-bottom: 26px;
   padding: 0;
-  overflow: hidden;
-  border: 1px solid rgba(98, 101, 77, 0.14);
-  border-radius: 34px;
-  background: var(--white);
-  box-shadow: 0 24px 62px rgba(98, 101, 77, 0.13);
-  backdrop-filter: blur(14px);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .hero-logo-img {
   width: 100%;
   height: auto;
   display: block;
-  background: var(--cream);
-  padding: 14px;
-  border-radius: 34px;
-  box-shadow: inset 0 0 0 1px rgba(98, 101, 77, 0.10);
-  filter: drop-shadow(0 12px 22px rgba(45, 42, 40, 0.08));
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
 }
 
 .hero-skyline {
@@ -1466,6 +1466,17 @@ h3 {
   color: var(--white);
 }
 
+.direct-platform strong {
+  font-size: clamp(28px, 3.1vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.direct-platform small {
+  line-height: 1.25;
+}
+
 .google-word {
   display: inline-flex;
   align-items: center;
@@ -2118,6 +2129,8 @@ h3 {
   }
 
   .booking-panel {
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: flex-start;
   }
 }
@@ -2139,6 +2152,11 @@ h3 {
     padding-top: 118px;
   }
 
+  .hero-logo {
+    width: min(300px, 76vw);
+    margin-bottom: 18px;
+  }
+
   h1 {
     font-size: clamp(46px, 14vw, 68px);
   }
@@ -2150,6 +2168,15 @@ h3 {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .platform-card {
+    min-height: auto;
+    padding: 26px;
+  }
+
+  .direct-platform strong {
+    font-size: clamp(27px, 7.2vw, 34px);
   }
 
   .trust-row,
@@ -2238,9 +2265,14 @@ h3 {
   }
 
   .direct-contact-links a,
-  .booking-contact-list span {
+  .booking-contact-list span,
+  .booking-actions .button {
     width: 100%;
     white-space: normal;
+  }
+
+  .identity-media {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .market-strip div {
@@ -2336,12 +2368,12 @@ h3 {
   .brand-mark {
     width: 58px;
     height: 38px;
-    padding: 6px;
+    padding: 0;
   }
 
   .hero-logo {
-    padding: 14px;
-    border-radius: 24px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .hero-logo-text {
