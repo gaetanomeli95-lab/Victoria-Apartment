@@ -19,6 +19,11 @@
 </head>
 <body>
   <div class="page-shell">
+    <div class="site-background" aria-hidden="true">
+      <span class="site-background-photo site-background-photo-1"></span>
+      <span class="site-background-photo site-background-photo-2"></span>
+      <span class="site-background-photo site-background-photo-3"></span>
+    </div>
     <svg class="svg-sprite" aria-hidden="true" focusable="false">
       <symbol id="victoria-skyline" viewBox="0 0 560 180">
         <path d="M18 128h524" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
@@ -63,7 +68,7 @@
           <a href="#posizione">Posizione</a>
           <a href="#recensioni">Recensioni</a>
           <a href="#contatti">Contatti</a>
-          <a class="nav-cta" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">Prenota diretto</a>
+          <a class="nav-cta" href="#prenota">Prenota / Preventivo</a>
         </div>
       </nav>
     </header>
@@ -78,7 +83,7 @@
           <h1>Il tuo appartamento silenzioso nel cuore più autentico di Palermo.</h1>
           <p>Victoria Apartment accoglie fino a 4 ospiti in 61 m² curati nei dettagli, con WiFi gratuito, aria condizionata, cucina privata, balconi e parcheggio privato su richiesta.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">Prenota diretto</a>
+            <a class="button button-primary" href="#prenota">Prenota o preventivo</a>
             <a class="button button-call" href="tel:+393510044209">Chiama ora</a>
             <a class="button button-whatsapp" href="https://wa.me/393510044209" target="_blank" rel="noreferrer">Scrivi su WhatsApp</a>
             <a class="button button-secondary" href="#gallery">Guarda le foto</a>
@@ -341,6 +346,81 @@
             <span aria-hidden="true">+</span>
             <span>Altre foto</span>
           </button>
+        </div>
+      </section>
+
+      <section class="section smart-booking-section" id="prenota" aria-label="Prenota soggiorno o richiedi preventivo">
+        <div class="smart-booking-card reveal">
+          <div class="smart-booking-copy">
+            <span class="eyebrow">Richiesta intelligente</span>
+            <h2>Prenota il soggiorno o ricevi un preventivo chiaro in pochi passaggi.</h2>
+            <p>Scegli date, ospiti e servizi desiderati: prepariamo automaticamente un messaggio WhatsApp completo, così puoi inviare la richiesta senza scrivere tutto da zero.</p>
+            <div class="smart-booking-points" aria-label="Vantaggi richiesta rapida">
+              <span><strong>1</strong> Date e ospiti</span>
+              <span><strong>2</strong> Parcheggio o navetta</span>
+              <span><strong>3</strong> Risposta diretta dell’host</span>
+            </div>
+          </div>
+          <form class="quote-form" data-quote-form>
+            <div class="quote-type" aria-label="Tipo di richiesta">
+              <label>
+                <input type="radio" name="requestType" value="una disponibilità per prenotare Victoria Apartment" checked>
+                <span>Prenotare</span>
+              </label>
+              <label>
+                <input type="radio" name="requestType" value="un preventivo per Victoria Apartment">
+                <span>Preventivo</span>
+              </label>
+            </div>
+            <div class="quote-form-grid">
+              <label>
+                <span>Arrivo</span>
+                <input type="date" name="checkin">
+              </label>
+              <label>
+                <span>Partenza</span>
+                <input type="date" name="checkout">
+              </label>
+              <label>
+                <span>Ospiti</span>
+                <select name="guests">
+                  <option value="1 ospite">1 ospite</option>
+                  <option value="2 ospiti" selected>2 ospiti</option>
+                  <option value="3 ospiti">3 ospiti</option>
+                  <option value="4 ospiti">4 ospiti</option>
+                </select>
+              </label>
+              <label>
+                <span>Servizi extra</span>
+                <select name="extraService">
+                  <option value="nessun servizio extra">Nessun extra</option>
+                  <option value="parcheggio privato richiesto">Parcheggio privato</option>
+                  <option value="navetta aeroportuale richiesta">Navetta aeroporto</option>
+                  <option value="parcheggio e navetta richiesti">Parcheggio + navetta</option>
+                </select>
+              </label>
+              <label>
+                <span>Nome</span>
+                <input type="text" name="guestName" placeholder="Il tuo nome">
+              </label>
+              <label>
+                <span>Contatto</span>
+                <input type="text" name="guestContact" placeholder="Telefono o email">
+              </label>
+            </div>
+            <label class="quote-notes">
+              <span>Messaggio o esigenze particolari</span>
+              <textarea name="notes" rows="4" placeholder="Es. arrivo in tarda serata, bambino piccolo, posto auto, richiesta prezzo migliore..."></textarea>
+            </label>
+            <div class="quote-preview" aria-live="polite">
+              <span>Anteprima messaggio</span>
+              <p data-quote-preview></p>
+            </div>
+            <div class="quote-actions">
+              <button class="button button-primary" type="submit">Invia richiesta su WhatsApp</button>
+              <a class="button button-secondary" href="tel:+393510044209">Preferisco chiamare</a>
+            </div>
+          </form>
         </div>
       </section>
 

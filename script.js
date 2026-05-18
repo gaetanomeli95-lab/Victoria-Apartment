@@ -9,6 +9,8 @@ const lightboxImage = document.querySelector('.lightbox img');
 const lightboxClose = document.querySelector('.lightbox-close');
 const galleryGrid = document.querySelector('[data-gallery-grid]');
 const galleryToggle = document.querySelector('[data-gallery-toggle]');
+const quoteForm = document.querySelector('[data-quote-form]');
+const quotePreview = document.querySelector('[data-quote-preview]');
 const year = document.querySelector('#year');
 
 async function blendLogoImages() {
@@ -130,6 +132,63 @@ window.addEventListener('hashchange', () => {
 });
 
 blendLogoImages();
+
+function formatItalianDate(value) {
+  if (!value) {
+    return 'da definire';
+  }
+
+  const [yearValue, monthValue, dayValue] = value.split('-');
+
+  if (!yearValue || !monthValue || !dayValue) {
+    return value;
+  }
+
+  return `${dayValue}/${monthValue}/${yearValue}`;
+}
+
+function buildQuoteMessage() {
+  if (!quoteForm) {
+    return '';
+  }
+
+  const formData = new FormData(quoteForm);
+  const getValue = (name) => String(formData.get(name) || '').trim();
+  const lines = [
+    `Ciao Victoria Apartment, vorrei richiedere ${getValue('requestType') || 'informazioni per Victoria Apartment'}.`,
+    `Arrivo: ${formatItalianDate(getValue('checkin'))}`,
+    `Partenza: ${formatItalianDate(getValue('checkout'))}`,
+    `Ospiti: ${getValue('guests') || 'da definire'}`,
+    `Servizi extra: ${getValue('extraService') || 'da valutare'}`,
+    getValue('guestName') ? `Nome: ${getValue('guestName')}` : '',
+    getValue('guestContact') ? `Contatto: ${getValue('guestContact')}` : '',
+    getValue('notes') ? `Note: ${getValue('notes')}` : '',
+    'Grazie!'
+  ];
+
+  return lines.filter(Boolean).join('\n');
+}
+
+function updateQuotePreview() {
+  if (!quotePreview) {
+    return;
+  }
+
+  quotePreview.textContent = buildQuoteMessage();
+}
+
+if (quoteForm) {
+  updateQuotePreview();
+
+  quoteForm.addEventListener('input', updateQuotePreview);
+  quoteForm.addEventListener('change', updateQuotePreview);
+  quoteForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const message = encodeURIComponent(buildQuoteMessage());
+    window.open(`https://wa.me/393510044209?text=${message}`, '_blank', 'noopener,noreferrer');
+  });
+}
 
 if (galleryGrid && galleryToggle) {
   const extraItems = Array.from(galleryGrid.querySelectorAll('.gallery-item:nth-child(n + 5)'));
